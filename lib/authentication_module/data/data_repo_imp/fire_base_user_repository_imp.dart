@@ -12,12 +12,12 @@ class FireBaseUserRepositoryImp extends BaseFireBaseUserRepository {
 
   @override
   Future<void> signIn(UserEntity user) async =>
-      fireBaseRemoteDataSource.signIn(user);
+     await fireBaseRemoteDataSource.signIn(user);
 
   
   @override
   Future<void> signUp(UserEntity user) async =>
-      fireBaseRemoteDataSource.signUp(user);
+    await  fireBaseRemoteDataSource.signUp(user);
 
   @override
  Future<void> signOut() async => await fireBaseRemoteDataSource.signOut();
@@ -25,7 +25,7 @@ class FireBaseUserRepositoryImp extends BaseFireBaseUserRepository {
 
   @override
    Future<void> forgotPassword(String email) async =>
-      fireBaseRemoteDataSource.forgotPassword(email);
+    await  fireBaseRemoteDataSource.forgotPassword(email);
 
 
   @override
@@ -41,11 +41,11 @@ class FireBaseUserRepositoryImp extends BaseFireBaseUserRepository {
 
   @override
   Future<void> getUpdateUser(UserEntity user) async =>
-      fireBaseRemoteDataSource.getUpdateUser(user);
+     await fireBaseRemoteDataSource.getUpdateUser(user);
 
   @override
   Future<void> googleAuth() async =>
-      fireBaseRemoteDataSource.googleAuth();
+    await  fireBaseRemoteDataSource.googleAuth();
 
 
   @override

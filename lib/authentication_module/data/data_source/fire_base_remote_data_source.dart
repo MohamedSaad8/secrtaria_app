@@ -13,6 +13,7 @@ class FireBaseRemoteDataSource extends BaseFirebaseRemoteDataSource {
 
 
   final FirebaseFirestore fireStore;
+  
   final FirebaseAuth auth;
   final GoogleSignIn googleSignIn;
   // ignore: unused_field

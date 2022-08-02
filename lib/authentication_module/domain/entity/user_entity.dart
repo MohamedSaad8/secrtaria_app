@@ -13,7 +13,8 @@ class UserEntity extends Equatable {
   final String dob;
   final String gender;
 
-    UserEntity({
+     // ignore: prefer_const_constructors_in_immutables
+     UserEntity({
     this.name="",
     this.email="",
     this.phoneNumber="",

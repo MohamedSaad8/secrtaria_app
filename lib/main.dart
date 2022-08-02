@@ -6,7 +6,7 @@ import 'package:secrtaria/splash_view_module/presentation/screens/secrtaria_spla
 import 'core/services/service_locator.dart';
 
 void main() {
-  ServiceLocator().setup();
+  ServiceLocator().serviceLocatorCaller();
   runApp(const Secrtaria());
 
 }
