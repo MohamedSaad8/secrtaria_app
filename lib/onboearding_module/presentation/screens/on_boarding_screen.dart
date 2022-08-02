@@ -86,7 +86,7 @@ class OnBoardingScreen extends StatelessWidget {
                   buttonHeight: 50.h,
                   buttonMargin: 20.w,
                   buttonText:
-                      controller.indicatorIndex != 9 ? "NEXT" : "Get Started",
+                      controller.indicatorIndex != 9 ? "nextButton".tr : "getStartedButton".tr,
                   buttonTextFontSize: 18.sp,
                   buttonWidth: Get.width,
                 ),

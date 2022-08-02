@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:secrtaria/core/constants/constant.dart';
 import 'package:secrtaria/onboearding_module/presentation/controller/page_view_controller.dart';
 
@@ -17,7 +18,7 @@ class SkipButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Text(
-          "Skip",
+          "skipButton".tr,
           style: TextStyle(
             color: Constant.kMainColor,
             fontWeight: FontWeight.bold,

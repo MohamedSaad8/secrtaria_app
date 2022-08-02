@@ -6,7 +6,7 @@ class SecrtariaSplashViewScreen extends StatelessWidget {
 const SecrtariaSplashViewScreen({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context){
-    print("hello all");
+
     return   SecrtariaSplashViewWidget(nextPage: OnBoardingScreen(),);
   }
 }

@@ -10,27 +10,30 @@ import 'core/services/service_locator.dart';
 
 void main() {
 
-
   ServiceLocator().setup();
   runApp(const Secrtaria());
   
 }
 
 class Secrtaria extends StatelessWidget {
+
+     
   const Secrtaria({super.key});
 
   @override
   Widget build(BuildContext context) {
-     print("my name is mohamed");
     return ScreenUtilInit(
       designSize:  const Size(360, 690) ,
       builder: (context, child) => GetMaterialApp(
       debugShowCheckedModeBanner: false,
       translations: Translation(),
+      locale: Locale(Get.deviceLocale!.languageCode),
+      fallbackLocale: const Locale("en"),
       //locale: Get.deviceLocale,
       title: 'Secrtaria',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: "Cairo"
       ),
       home:const SecrtariaSplashViewScreen(), 
     ),
