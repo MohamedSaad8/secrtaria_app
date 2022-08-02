@@ -5,9 +5,13 @@ import '../../../core/constants/constant.dart';
 import '../controller/page_view_controller.dart';
 
 class PageViewItem extends StatelessWidget {
-    final int itemIndex ;
-    final PageViewController itemsDataController ;
-  const PageViewItem({super.key, required this.itemIndex, required this.itemsDataController});
+  final int itemIndex;
+  final PageViewController itemsDataController;
+  const PageViewItem({
+    super.key,
+    required this.itemIndex,
+    required this.itemsDataController,
+  });
 
   @override
   Widget build(BuildContext context) {
