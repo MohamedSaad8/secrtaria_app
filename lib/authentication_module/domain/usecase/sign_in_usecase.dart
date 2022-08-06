@@ -6,7 +6,7 @@ class SignInUseCase{
 
   SignInUseCase({required this.baseFireBaseUserRepository});
 
-  Future<void> call(UserEntity user){
-    return baseFireBaseUserRepository.signIn(user);
+  Future<void> execute(UserEntity user) async{
+    return await baseFireBaseUserRepository.signInContract(user);
   }
 }

@@ -1,55 +1,41 @@
 import 'package:secrtaria/authentication_module/domain/entity/user_entity.dart';
 import 'package:secrtaria/authentication_module/domain/repository/base_fire_base_user_repository.dart';
-import '../data_source/fire_base_remote_data_source.dart';
+import "../data_source/base_firebase_remote_data_source.dart" ;
 
 class FireBaseUserRepositoryImp extends BaseFireBaseUserRepository {
 
-  final FireBaseRemoteDataSource fireBaseRemoteDataSource;
+  final BaseFirebaseRemoteDataSource baseFirebaseRemoteDataSource ;
+  
   FireBaseUserRepositoryImp({
-    required this.fireBaseRemoteDataSource,
+    required this.baseFirebaseRemoteDataSource,
   });
 
 
   @override
-  Future<void> signIn(UserEntity user) async =>
-     await fireBaseRemoteDataSource.signIn(user);
+  Future<void> signInContract(UserEntity user) async =>
+     await baseFirebaseRemoteDataSource.signInDataSource(user);
 
   
   @override
-  Future<void> signUp(UserEntity user) async =>
-    await  fireBaseRemoteDataSource.signUp(user);
+  Future<void> signUpContract(UserEntity user) async =>
+    await  baseFirebaseRemoteDataSource.signUpDataSource(user);
 
   @override
- Future<void> signOut() async => await fireBaseRemoteDataSource.signOut();
+ Future<void> signOutContract() async => await baseFirebaseRemoteDataSource.signOutDataSource();
 
+
+  
+  @override
+   Future<void> getCreateCurrentUserContract(UserEntity user) async =>
+      await baseFirebaseRemoteDataSource.getCreateCurrentUserDataSource(user);
 
   @override
-   Future<void> forgotPassword(String email) async =>
-    await  fireBaseRemoteDataSource.forgotPassword(email);
+ String getCurrentUIdContract()  => baseFirebaseRemoteDataSource.getCurrentUIdDataSource();
 
-
-  @override
-  Stream<List<UserEntity>> getAllUsers() => fireBaseRemoteDataSource.getAllUsers();
+ 
 
   @override
-   Future<void> getCreateCurrentUser(UserEntity user) async =>
-      await fireBaseRemoteDataSource.getCreateCurrentUser(user);
-
-  @override
- Future<String> getCurrentUId() async =>
-      await fireBaseRemoteDataSource.getCurrentUId();
-
-  @override
-  Future<void> getUpdateUser(UserEntity user) async =>
-     await fireBaseRemoteDataSource.getUpdateUser(user);
-
-  @override
-  Future<void> googleAuth() async =>
-    await  fireBaseRemoteDataSource.googleAuth();
-
-
-  @override
- Future<bool> isSignIn() async => await fireBaseRemoteDataSource.isSignIn();
+ bool isSignInContract()  =>  baseFirebaseRemoteDataSource.isSignInDataSource();
  
 
 

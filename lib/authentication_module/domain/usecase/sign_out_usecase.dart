@@ -7,6 +7,6 @@ class SignOutUseCase {
   SignOutUseCase({required this.baseFireBaseUserRepository});
 
   Future<void> call()async{
-    return baseFireBaseUserRepository.signOut();
+    return await baseFireBaseUserRepository.signOutContract();
   }
 }

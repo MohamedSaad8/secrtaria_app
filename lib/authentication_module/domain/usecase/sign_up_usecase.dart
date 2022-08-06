@@ -6,7 +6,7 @@ class SignUpUseCase{
 
   SignUpUseCase({required this.baseFireBaseUserRepository});
 
-  Future<void> call(UserEntity user){
-    return baseFireBaseUserRepository.signUp(user);
+  Future<void> execute(UserEntity user)async{
+    return await baseFireBaseUserRepository.signUpContract(user);
   }
 }

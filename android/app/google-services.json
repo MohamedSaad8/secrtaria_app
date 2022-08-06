@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1019993706665",
+    "project_id": "secrtaria-app",
+    "storage_bucket": "secrtaria-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019993706665:android:0e54bdb68aca436a4799b8",
+        "android_client_info": {
+          "package_name": "com.example.secrtaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019993706665-pt8f35jneo8e4l38u3hch9oick7d942b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBncT9PEvDj117k-uBiyOHo5WVyIAmZXhw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019993706665-pt8f35jneo8e4l38u3hch9oick7d942b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,7 +4,7 @@ class GetCurrentUIDUseCase{
 final BaseFireBaseUserRepository baseFireBaseUserRepository;
 
   GetCurrentUIDUseCase({required this.baseFireBaseUserRepository});
-  Future<String> call()async{
-    return await baseFireBaseUserRepository.getCurrentUId();
+  String execute(){
+    return  baseFireBaseUserRepository.getCurrentUIdContract();
   }
 }

@@ -29,24 +29,19 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-
-  #firebase
   cloud_firestore: ^3.4.3
-  firebase_auth: ^3.6.2
-  firebase_storage: ^10.3.4
-  google_sign_in: ^5.4.0
-
-
   cupertino_icons: ^1.0.2
   dots_indicator: ^2.1.0
   equatable: ^2.0.3
-  
+  firebase_auth: ^3.6.2
+  firebase_storage: ^10.3.4
   flutter:
     sdk: flutter
-    
+  flutter_bloc: ^8.0.1
   flutter_screenutil: ^5.5.3+2
   get: ^4.6.5
   get_it: ^7.2.0
+  google_sign_in: ^5.4.0
   image_picker: ^0.8.5+3
   shared_preferences: ^2.0.15
   splash_screen_view: ^3.0.0
