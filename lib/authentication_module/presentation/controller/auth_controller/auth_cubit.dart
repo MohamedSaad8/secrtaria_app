@@ -20,4 +20,14 @@ class AuthCubit extends Cubit<AuthState> {
       emit(UnAuthenticated());
     }
   }
+
+
+  void loggedIn(){
+    try{
+       final uid= currentUIDUseCase.execute();
+      emit(Authenticated(uid: uid));
+    }catch(_){
+      emit(UnAuthenticated());
+    }
+  }
 }

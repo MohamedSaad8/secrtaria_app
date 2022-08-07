@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:secrtaria/authentication_module/presentation/controller/auth_controller/auth_states.dart';
+import 'package:secrtaria/authentication_module/presentation/screens/login_screen.dart';
 import 'package:secrtaria/core/constants/constant.dart';
 import 'package:secrtaria/core/widgets/custom_button_widget.dart';
 import '../../../authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
@@ -87,6 +88,9 @@ class OnBoardingScreen extends StatelessWidget {
                      if(controller.indicatorIndex <= controller.listOfPageViewItemsData.length)
                      {
                        goToNextPage(controller);
+                     }
+                     if(controller.indicatorIndex == 9){
+                      Get.to(()=> LoginScreen());
                      }
                     
                     },

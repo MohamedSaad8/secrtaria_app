@@ -39,10 +39,12 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   flutter_screenutil: ^5.5.3+2
+  fluttertoast: ^8.0.9
   get: ^4.6.5
   get_it: ^7.2.0
   google_sign_in: ^5.4.0
   image_picker: ^0.8.5+3
+  lottie: ^1.4.1
   shared_preferences: ^2.0.15
   splash_screen_view: ^3.0.0
 

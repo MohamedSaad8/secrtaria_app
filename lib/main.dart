@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:secrtaria/core/utils/app_languages/translation/translation.dart';
 import 'package:secrtaria/splash_view_module/presentation/screens/secrtaria_splash_view_screen.dart';
 import 'authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
+import 'authentication_module/presentation/controller/credential_controller/credential_cubit.dart';
 import 'core/services/service_locator.dart';
 import "package:firebase_core/firebase_core.dart" ;
 
@@ -31,6 +32,9 @@ class Secrtaria extends StatelessWidget {
          BlocProvider<AuthCubit>(
           create: (context) => getIt<AuthCubit>()..appStarted() ,
         ),
+         BlocProvider<CredentialCubit>(
+          create: (context) =>CredentialCubit(),
+        ),
       ],
       child: ScreenUtilInit(
         designSize:  const Size(360, 690) ,
@@ -39,7 +43,6 @@ class Secrtaria extends StatelessWidget {
         translations: Translation(),
         locale: Locale(Get.deviceLocale!.languageCode),
         fallbackLocale: const Locale("en"),
-        //locale: Get.deviceLocale,
         title: 'Secrtaria',
         theme: ThemeData(
           primarySwatch: Colors.blue,
