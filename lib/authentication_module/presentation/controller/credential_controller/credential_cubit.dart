@@ -8,6 +8,7 @@ import '../../../domain/usecase/sign_up_usecase.dart';
 import 'credential_state.dart';
 
 class CredentialCubit extends Cubit<CredentialState> {
+
   final SignUpUseCase signUpUseCase = getIt();
   final SignInUseCase signInUseCase = getIt();
   final GetCreateCurrentUserUseCase getCreateCurrentUserUseCase = getIt();

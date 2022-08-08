@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:secrtaria/authentication_module/presentation/widgets/custom_login_form.dart';
 import 'package:secrtaria/home_page.dart';
 import '../controller/auth_controller/auth_cubit.dart';
 import '../controller/credential_controller/credential_cubit.dart';
 import '../controller/credential_controller/credential_state.dart';
+import '../widgets/custom_register_form.dart';
 
 
-class LoginScreen extends StatelessWidget {
+class RegisterScreen extends StatelessWidget {
 
- const LoginScreen({super.key});
+ const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
           if (credentialState is CredentialSuccess) {
             return const HomePage();
           }
-           return  CustomLoginForm();
+           return  CustomRegisterForm();
         },
       ),
     );

@@ -6,6 +6,7 @@ import 'package:secrtaria/authentication_module/presentation/controller/auth_con
 import 'package:secrtaria/onboearding_module/data/Repository/page_view_repo_imp.dart';
 import 'package:secrtaria/onboearding_module/data/data_source/page_view_assets_data_source.dart';
 import 'package:secrtaria/onboearding_module/domain/repository/base_page_view_repository.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../authentication_module/data/data_source/fire_base_remote_data_source.dart';
 import '../../authentication_module/domain/usecase/get_create_current_user_usecase.dart';
 import '../../authentication_module/domain/usecase/get_current_uid_usecase.dart';
@@ -35,9 +36,10 @@ class ServiceLocator {
 
 //* *****************************************************************************
 
+
       //*Cubits
     getIt.registerLazySingleton<AuthCubit>(
-      () => AuthCubit(isSignInUseCase: getIt(), currentUIDUseCase: getIt())
+      () => AuthCubit(isSignInUseCase: getIt(), currentUIDUseCase: getIt(), signOutUseCase: getIt())
     );
 
        //* UseCases 

@@ -23,6 +23,34 @@ const Map<String , String> en = {
   "trendsServiceDescription":"In Secrtaria you can know that is the trend in some places and reacted it",
   "newsService" : "News Service" ,
   "newsServiceDescription" : "In Secrtaria you can know your country News and all world countries news" ,
+  "emailEmptyValidation" : "Email Felid is Empty",
+  "emailBadFormateValidation" :"the email address is bad format",
+  "userNameEmpty" : "UserName Felid is Empty",
+  "usernameLength" : "UserName must be more than 8 char",
+  "phoneEmpty" : "Phone Number Felid is Empty",
+  "phoneBadFormateValidation" : "Please Enter valid phone number",
+  "passwordEmpty" : "Please enter password",
+  "passwordNotValid" : "Please Enter Strong  password at lest 8 characters",
+   "confirmPassword" : "password and confirm password not equal",
+   "Login" : "Login" ,
+   "Please Sign in to continue" : "Please Sign in to continue" ,
+   "Email" : "Email" ,
+   "Password" : "Password" ,
+   "Forgot password" : "Forgot password?" ,
+   "Register" : "Register" ,
+   "don't have an Account" : "don't have an Account" ,
+   "UserName" : "UserName" ,
+   "Phone Number" : "Phone Number" ,
+   "Confirm Password" : "Confirm Password" ,
+   "Date of birth" : "Date of birth" ,
+   "Sign Up" : "Sign Up" ,
+   "already have an Account" : "already have an Account" ,
+   "Please Sign Up to continue" : "Please Sign Up to continue"
+
+
+
+ 
+
 
 
 

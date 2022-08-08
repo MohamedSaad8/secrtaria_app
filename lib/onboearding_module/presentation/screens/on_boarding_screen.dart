@@ -1,13 +1,12 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:secrtaria/authentication_module/presentation/controller/auth_controller/auth_states.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:secrtaria/authentication_module/presentation/screens/login_screen.dart';
 import 'package:secrtaria/core/constants/constant.dart';
 import 'package:secrtaria/core/widgets/custom_button_widget.dart';
-import '../../../authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../controller/page_view_controller.dart';
 import '../widgets/page_view_item.dart';
 import '../widgets/skip_button.dart';
@@ -84,13 +83,18 @@ class OnBoardingScreen extends StatelessWidget {
                 right: 0,
                 left: 0,
                 child: CustomButton(
-                    buttonAction: () {
+                    buttonAction: () async{
+                      SharedPreferences preferences = await SharedPreferences.getInstance();
+                      
                      if(controller.indicatorIndex <= controller.listOfPageViewItemsData.length)
                      {
                        goToNextPage(controller);
                      }
                      if(controller.indicatorIndex == 9){
-                      Get.to(()=> LoginScreen());
+                        await  preferences.setBool("isOnBoardingSeen", true);
+                      //TODo:  handel this logic
+                      Get.to(()=> const LoginScreen());
+                      
                      }
                     
                     },
@@ -116,7 +120,7 @@ class OnBoardingScreen extends StatelessWidget {
             ? controller.indicatorIndex + 1
             : controller.indicatorIndex);
     controllerForPageMovements.animateToPage(
-      controller.indicatorIndex,
+       controller.indicatorIndex   ,
       duration: const Duration(milliseconds: 100),
       curve: Curves.easeInOut,
     );
