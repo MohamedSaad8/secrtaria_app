@@ -9,6 +9,8 @@ abstract class BaseFirebaseRemoteDataSource {
   Future<void> signOutDataSource();
   String getCurrentUIdDataSource();
   Future<void> getCreateCurrentUserDataSource(UserEntity user);
+   Future<void> googleAuth();
+  Future<void> forgotPassword(String email);
  
   
 }

@@ -7,9 +7,12 @@ import '../../../domain/usecase/sign_out_usecase.dart';
 class AuthCubit extends Cubit<AuthState> {
   IsSignInUseCase isSignInUseCase;
   GetCurrentUIDUseCase currentUIDUseCase;
-  SignOutUseCase signOutUseCase ;
+  SignOutUseCase signOutUseCase;
 
-  AuthCubit({required this.isSignInUseCase, required this.currentUIDUseCase , required this.signOutUseCase})
+  AuthCubit(
+      {required this.isSignInUseCase,
+      required this.currentUIDUseCase,
+      required this.signOutUseCase})
       : super(AuthInitial());
 
   void appStarted() {
@@ -23,22 +26,20 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-
-  void loggedIn(){
-    try{
-       final uid= currentUIDUseCase.execute();
+  void loggedIn() {
+    try {
+      final uid = currentUIDUseCase.execute();
       emit(Authenticated(uid: uid));
-    }catch(_){
+    } catch (_) {
       emit(UnAuthenticated());
     }
   }
 
-
-    Future<void> loggedOut()async{
-    try{
+  Future<void> loggedOut() async {
+    try {
       await signOutUseCase.execute();
       emit(UnAuthenticated());
-    }catch(_){
+    } catch (_) {
       emit(UnAuthenticated());
     }
   }

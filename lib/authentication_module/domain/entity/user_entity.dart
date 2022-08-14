@@ -23,7 +23,7 @@ class UserEntity extends Equatable {
     this.status = "Hello there i'm using this app",
     this.profileUrl="",
     this.password="",
-    this.dob="",
+    this.dob="1998-08-08 00:00:00.000",
     this.gender="",
   });
 

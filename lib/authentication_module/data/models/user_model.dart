@@ -8,9 +8,9 @@ class UserModel extends UserEntity {
     String phoneNumber= "",
     bool isOnline= false,
     String uid= "",
-    String status = "",
+    String status = "Hello there i'm using this app",
     String profileUrl = "",
-    String dob= "",
+    String dob= "1998-08-08 00:00:00.000",
     String gender= "",
   }) : super(
           name: name,

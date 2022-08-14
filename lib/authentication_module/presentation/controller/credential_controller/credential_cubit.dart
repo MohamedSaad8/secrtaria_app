@@ -1,29 +1,36 @@
-import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../core/services/service_locator.dart';
 import '../../../domain/entity/user_entity.dart';
 import '../../../domain/usecase/get_create_current_user_usecase.dart';
+import '../../../domain/usecase/google_sign_in_usecase.dart';
 import '../../../domain/usecase/sign_in_usecase.dart';
 import '../../../domain/usecase/sign_up_usecase.dart';
 import 'credential_state.dart';
 
 class CredentialCubit extends Cubit<CredentialState> {
+  bool isLoading = false;
+  final SignUpUseCase signUpUseCase;
+  final SignInUseCase signInUseCase;
+  final GoogleSignInUseCase googleSignInUseCase;
+  final GetCreateCurrentUserUseCase getCreateCurrentUserUseCase;
 
-  final SignUpUseCase signUpUseCase = getIt();
-  final SignInUseCase signInUseCase = getIt();
-  final GetCreateCurrentUserUseCase getCreateCurrentUserUseCase = getIt();
+  CredentialCubit(
+      {required this.signUpUseCase,
+      required this.signInUseCase,
+      required this.googleSignInUseCase,
+      required this.getCreateCurrentUserUseCase})
+      : super(CredentialInitial());
 
-  CredentialCubit() : super(CredentialInitial());
-
-  Future<void> signInController({ required String email, required String password,}) async {
+  Future<void> signInController({
+    required String email,
+    required String password,
+  }) async {
     emit(CredentialLoading());
     try {
       await signInUseCase.execute(UserEntity(email: email, password: password));
       emit(CredentialSuccess());
-    } on SocketException catch (_) {
-      emit(CredentialFailure());
-    } catch (_) {
-      emit(CredentialFailure());
+    } on FirebaseAuthException catch (ex) {
+      emit(CredentialFailure(errorMessage: ex.message!));
     }
   }
 
@@ -34,10 +41,18 @@ class CredentialCubit extends Cubit<CredentialState> {
           .execute(UserEntity(email: user.email, password: user.password));
       await getCreateCurrentUserUseCase.execute(user);
       emit(CredentialSuccess());
-    } on SocketException catch (_) {
-      emit(CredentialFailure());
-    } catch (_) {
-      emit(CredentialFailure());
+    } on FirebaseAuthException catch (ex) {
+      emit(CredentialFailure(errorMessage: ex.message!));
+    }
+  }
+
+  Future<void> googleSignInController() async {
+    emit(CredentialLoading());
+    try {
+      await googleSignInUseCase.execute();
+      emit(CredentialSuccess());
+    } on FirebaseAuthException catch (ex) {
+      emit(CredentialFailure(errorMessage: ex.message!));
     }
   }
 }

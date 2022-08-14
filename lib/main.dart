@@ -33,7 +33,7 @@ class Secrtaria extends StatelessWidget {
           create: (context) => getIt<AuthCubit>()..appStarted() ,
         ),
          BlocProvider<CredentialCubit>(
-          create: (context) =>CredentialCubit(),
+          create: (context) =>getIt<CredentialCubit>(),
         ),
       ],
       child: ScreenUtilInit(

@@ -1,9 +1,5 @@
-// ignore_for_file: avoid_print
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:secrtaria/authentication_module/presentation/screens/login_screen.dart';
 import 'package:secrtaria/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,27 +9,26 @@ import '../../../onboearding_module/presentation/screens/on_boarding_screen.dart
 import '../widgets/secrtaria_splash_view_widget.dart';
 
 class SecrtariaSplashViewScreen extends StatefulWidget {
-  
   const SecrtariaSplashViewScreen({Key? key}) : super(key: key);
 
   @override
-  State<SecrtariaSplashViewScreen> createState() => _SecrtariaSplashViewScreenState();
+  State<SecrtariaSplashViewScreen> createState() =>
+      _SecrtariaSplashViewScreenState();
 }
-
 
 class _SecrtariaSplashViewScreenState extends State<SecrtariaSplashViewScreen> {
   bool? isSeen;
   @override
-  void initState()  {
+  void initState() {
     super.initState();
     onBoardingState();
   }
 
-  void onBoardingState()async{
+  void onBoardingState() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-      isSeen =   preferences.getBool("isOnBoardingSeen");
-      print(isSeen);
+    isSeen = preferences.getBool("isOnBoardingSeen");
   }
+
   @override
   Widget build(BuildContext context) {
     return SecrtariaSplashViewWidget(
@@ -41,13 +36,10 @@ class _SecrtariaSplashViewScreenState extends State<SecrtariaSplashViewScreen> {
         builder: (context, state) {
           if (state is Authenticated) {
             return const HomePage();
-          } else if(isSeen != null && isSeen == true)
-           {
-            return const LoginScreen();
-          }
-          else 
-          {
-              return OnBoardingScreen();
+          } else if (isSeen != null && isSeen == true) {
+            return  LoginScreen();
+          } else {
+            return OnBoardingScreen();
           }
         },
       ),

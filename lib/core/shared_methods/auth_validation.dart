@@ -1,7 +1,9 @@
 
+// ignore_for_file: unnecessary_string_escapes
+
 import 'package:get/get.dart';
 
- String? emailControllerValidator(String? value) {
+ String? emailControllerValidator(String? value ) {
     if(value!.isEmpty)
     {
       return "emailEmptyValidation".tr ;
@@ -40,25 +42,35 @@ import 'package:get/get.dart';
     }
   }
   
-   String? passwordControllerValidator(String? value) {
+   String? passwordControllerValidator(String? value , {bool isForLogin = false}) {
     RegExp regex =
-        RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~+-/.]).{8,}$');
-    if (value!.isEmpty) {
-      return 'passwordEmpty'.tr;
-    } else {
-      if (!regex.hasMatch(value)) {
+        RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*\.\?])(?=.{8,})");
+   if(!isForLogin)
+   {
+     if (value!.isEmpty)
+     {
+        return 'passwordEmpty'.tr;
+     } 
+     else if(!regex.hasMatch(value)) 
+      {
         return 'passwordNotValid'.tr;
-      } else {
-        return null;
-      }
+      } 
+   }
+   else if (isForLogin == true &&value!.isEmpty)
+   {
+  return 'passwordEmpty'.tr;
+   }
+
+       return null;
+      
     }
-  }
+  
    
-   String? confirmPasswordControllerValidator(String? value , String password) {
+   String? confirmPasswordControllerValidator(String? value , String? password) {
     if (value!.isEmpty) {
       return 'passwordEmpty'.tr;
     } else {
-      if (value != password) {
+      if (value != password || password == null) {
         return 'confirmPassword'.tr;
       } else {
         return null;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:secrtaria/authentication_module/presentation/controller/credential_controller/credential_cubit.dart';
 
 import 'authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
 

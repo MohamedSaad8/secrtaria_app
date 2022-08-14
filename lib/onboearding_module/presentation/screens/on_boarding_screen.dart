@@ -2,7 +2,6 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:secrtaria/authentication_module/presentation/screens/login_screen.dart';
 import 'package:secrtaria/core/constants/constant.dart';
 import 'package:secrtaria/core/widgets/custom_button_widget.dart';
@@ -93,7 +92,7 @@ class OnBoardingScreen extends StatelessWidget {
                      if(controller.indicatorIndex == 9){
                         await  preferences.setBool("isOnBoardingSeen", true);
                       //TODo:  handel this logic
-                      Get.to(()=> const LoginScreen());
+                      Get.offAll(()=> const LoginScreen());
                       
                      }
                     

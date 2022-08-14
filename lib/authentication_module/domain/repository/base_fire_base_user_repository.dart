@@ -8,6 +8,8 @@ abstract class BaseFireBaseUserRepository {
   Future<void> getCreateCurrentUserContract(UserEntity user);
   bool isSignInContract();
   String getCurrentUIdContract();
+  Future<void> googleSignInContract();
+  Future<void> forgotPasswordContract(String email);
 
  
 }
