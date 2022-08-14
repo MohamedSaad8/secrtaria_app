@@ -48,6 +48,8 @@ dependencies:
   modal_progress_hud_nsn: ^0.1.0-nullsafety-0
   shared_preferences: ^2.0.15
   splash_screen_view: ^3.0.0
+  slidable_bar: ^1.1.1
+  
 
 dev_dependencies:
   flutter_lints: ^2.0.0

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:secrtaria/home_page.dart';
+import 'package:secrtaria/home_module/screens/home_screen.dart';
 import '../../../core/services/service_locator.dart';
 import '../controller/auth_controller/auth_cubit.dart';
 import '../controller/auth_controller/auth_states.dart';
@@ -42,7 +42,7 @@ class RegisterScreen extends StatelessWidget {
             return BlocBuilder<AuthCubit, AuthState>(
               builder: (context, authState) {
                 if (authState is Authenticated) {
-                  return const HomePage();
+                  return  HomeScreen();
                 } else {
                   return CustomRegisterForm();
                 }

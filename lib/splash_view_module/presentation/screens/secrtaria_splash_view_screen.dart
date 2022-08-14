@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secrtaria/authentication_module/presentation/screens/login_screen.dart';
-import 'package:secrtaria/home_page.dart';
+import 'package:secrtaria/home_module/screens/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
 import '../../../authentication_module/presentation/controller/auth_controller/auth_states.dart';
@@ -35,7 +35,7 @@ class _SecrtariaSplashViewScreenState extends State<SecrtariaSplashViewScreen> {
       nextPage: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           if (state is Authenticated) {
-            return const HomePage();
+            return  HomeScreen();
           } else if (isSeen != null && isSeen == true) {
             return  LoginScreen();
           } else {
