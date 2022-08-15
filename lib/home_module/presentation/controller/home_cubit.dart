@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:secrtaria/home_module/controller/home_state.dart';
+import 'package:secrtaria/home_module/presentation/controller/home_state.dart';
 
 class HomeCubit extends Cubit<HomeStates> {
   HomeCubit() : super(ChatState());

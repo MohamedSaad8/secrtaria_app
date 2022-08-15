@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secrtaria/authentication_module/presentation/screens/login_screen.dart';
-import 'package:secrtaria/home_module/screens/home_screen.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
 import '../../../authentication_module/presentation/controller/auth_controller/auth_states.dart';
+import '../../../home_module/presentation/screens/home_screen.dart';
 import '../../../onboearding_module/presentation/screens/on_boarding_screen.dart';
 import '../widgets/secrtaria_splash_view_widget.dart';
 

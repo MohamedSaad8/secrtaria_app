@@ -1,6 +1,7 @@
 
 abstract class HomeStates {}
 
+class UserInfoState extends HomeStates {}
 class ChatState extends HomeStates{}
 class MusicPlayerState extends HomeStates{}
 class CinemaState extends HomeStates{}

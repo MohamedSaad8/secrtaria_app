@@ -3,16 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:secrtaria/core/utils/app_languages/translation/translation.dart';
-import 'package:secrtaria/home_module/controller/home_cubit.dart';
 import 'package:secrtaria/splash_view_module/presentation/screens/secrtaria_splash_view_screen.dart';
 import 'authentication_module/presentation/controller/auth_controller/auth_cubit.dart';
 import 'authentication_module/presentation/controller/credential_controller/credential_cubit.dart';
 import 'core/services/service_locator.dart';
 // ignore: depend_on_referenced_packages
 import "package:firebase_core/firebase_core.dart" ;
-
 // Import the generated file
 import 'firebase_options.dart';
+import 'home_module/presentation/controller/home_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
